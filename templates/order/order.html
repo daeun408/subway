@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div>
+    <h2>주문 하기</h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <!-- 오류 표시 -->
+        <!--
+        {% if form.errors %}
+            <div>
+            {% for field in form %}
+                {%if field.errors %}
+                <strong>{{ field.errors }}</strong>
+                {{ field..errors }}
+                {% endif %}
+            {% endfor %}
+            </div>
+        {% endif %}
+        <div>
+            <label for="menu">메뉴</label>
+            <select name="menu" id="menu">
+                <option>shrimp</option>
+                <option>chicken</option>
+                <option>pork</option>
+                <option>beef</option>
+                <option>tuna</option>
+            </select>
+        </div>
+        <div>
+            <label for="bread">빵</label>
+            <select name="bread" id="bread">
+                <option>white</option>
+                <option>hati</option>
+                <option>parmesanOregano</option>
+                <option>honeyOats</option>
+            </select>
+        </div>
+        <div>
+            <label for="cheese">치즈</label>
+            <select name="cheese" id="cheese">
+                <option>mozzarella</option>
+                <option>cheddar</option>
+                <option>americanCheese</option>
+
+            </select>
+        </div>
+        <div>
+            <label for="tosting">토스팅</label>
+            <input type="checkbox" name="tosting" id="tosting">
+        </div>
+        <div>
+            <label for="vegetables">아채: </label>
+                <input type="checkbox" name="Lettuce" id="Lettuce">
+                <label for="Lettuce">Lettuce</label>
+                <input type="checkbox" name="Tomatoes" id="Tomatoes">
+                <label>Tomatoes</label>
+                <input type="checkbox">
+                <label>Cucumbers</label>
+                <input type="checkbox">
+                <label>Peppers</label>
+                <input type="checkbox">
+                <label>RedOnions</label>
+                <input type="checkbox">
+                <label>Pickles</label>
+                <input type="checkbox">
+                <label>Olives</label>
+                <input type="checkbox">
+                <label>Jalapenos</label>
+        </div>
+        -->
+        <button type="submit">주문하기</button>
+    </form>
+</div>
+{% endblock %}   

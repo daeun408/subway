@@ -1,0 +1,8 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2 style="display:inline">샌드위치 주문하기 -> </h2>
+	<a style="display:inline" href="{% url 'order:order' %}">주문 바로가기</a><br>
+    <h2 style="display:inline">주문내역 확인하기 -> </h2>
+    <a style="display:inline" href="{% url 'order:history'%}">확인하기</a>
+{% endblock %}   

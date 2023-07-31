@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h3 style="display:inline">로그인</h3>
+<a href="{% url 'common:signup' %}">회원가입</a>
+<div>
+    <form method="post" action="{% url 'common:login' %}">
+        {% csrf_token %}
+				{% include "form_errors.html" %}
+        <div>
+            <label>사용자ID</label>
+            <input type="text" name="username" id="username">
+        </div>
+        <div>
+            <label>비밀번호</label>
+            <input type="text" name="password" id="password">
+        </div>
+        <input type="hidden" name="next" value="{{ next }}">
+        <button type="submit">로그인</button>
+    </form>
+</div>
+{% endblock %}

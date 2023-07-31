@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block content %}
+
+<h2>주문내역</h2>
+<h4 style="display:inline">주문한 샌드위치 수 : {% len(order_list) %}</h4>
+
+{% if order_list %}
+    <ul>
+        {% for order in order_list %}
+            <li>{{ order.menu }}</li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>주문한 기록이 없습니다.</p>
+{% endif %}
+{% endblock %}
